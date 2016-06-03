@@ -76,6 +76,7 @@
 }
 
 #pragma mark - 数据源方法
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     if (tableView == self.leftTableview) {
         return 1;
@@ -151,15 +152,11 @@
     if (tableView == self.rightTableview) {
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 30)];
         view.backgroundColor = RGBACOLOR(217, 217, 217, 0.7);
-        
         UILabel *label = [[UILabel alloc]initWithFrame:view.bounds];
-        
         NSDictionary *item = [_dataArray objectAtIndex:section];
         NSString *title = [item objectForKey:@"title"];
-        
         label.text = [NSString stringWithFormat:@"    %@",title];
         [view addSubview:label];
-        
         return view;
     }else{
         return nil;
@@ -181,7 +178,6 @@
         NSInteger topCellSection = [[[tableView indexPathsForVisibleRows]firstObject]section];
         if (tableView == self.rightTableview) {
             [self.leftTableview selectRowAtIndexPath:[NSIndexPath indexPathForItem:topCellSection inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
-            
         }
     }
 }
