@@ -20,8 +20,6 @@
     [super viewDidLoad];
     self.title = @"二级联动";
     
-    
-    
     [self loadData];
     [self leftTableview];
     [self rightTableview];
@@ -30,30 +28,29 @@
 }
 
 -(void)loadData{
-    _dataArray = @[@{@"title":@"00",@"list":@[@"soldier",@"aaa0",@"aaa",@"aaa",@"aaa"]},
-                   @{@"title":@"01",@"list":@[@"soldier",@"aaa2",@"aaa",@"aaa",@"aaa"]},
-                   @{@"title":@"02",@"list":@[@"soldier",@"aaa3",@"aaa",@"aaa",@"aaa"]},
-                   @{@"title":@"03",@"list":@[@"soldier",@"aaa4",@"aaa",@"aaa",@"aaa"]},
-                   @{@"title":@"04",@"list":@[@"soldier",@"aaa5",@"aaa",@"aaa",@"aaa"]},
-                   @{@"title":@"05",@"list":@[@"soldier",@"aaa6",@"aaa",@"aaa",@"aaa"]},
-                   @{@"title":@"06",@"list":@[@"soldier",@"aaa7",@"aaa",@"aaa",@"aaa"]},
-                   @{@"title":@"07",@"list":@[@"soldier",@"aaa8",@"aaa",@"aaa",@"aaa"]},
-                   @{@"title":@"08",@"list":@[@"soldier",@"aaa9",@"aaa",@"aaa",@"aaa"]},
-                   @{@"title":@"09",@"list":@[@"soldier",@"aaa10",@"aaa",@"aaa",@"aaa"]},
-                   @{@"title":@"10",@"list":@[@"soldier",@"aaa11",@"aaa",@"aaa",@"aaa"]},
+    _dataArray = @[@{@"title":@"第一组",@"list":@[@"1",@"one",@"two",@"three",@"foue",@"five"]},
+                   @{@"title":@"第二组",@"list":@[@"2",@"one",@"two",@"three",@"foue",@"five"]},
+                   @{@"title":@"第三组",@"list":@[@"3",@"one",@"two",@"three",@"foue",@"five"]},
+                   @{@"title":@"第四组",@"list":@[@"4",@"one",@"two",@"three",@"foue",@"five"]},
+                   @{@"title":@"第五组",@"list":@[@"5",@"one",@"two",@"three",@"foue",@"five"]},
+                   @{@"title":@"第六组",@"list":@[@"6",@"one",@"two",@"three",@"foue",@"five"]},
+                   @{@"title":@"第七组",@"list":@[@"7",@"one",@"two",@"three",@"foue",@"five"]},
+                   @{@"title":@"第八组",@"list":@[@"8",@"one",@"two",@"three",@"foue",@"five"]},
+                   @{@"title":@"第九组",@"list":@[@"9",@"one",@"two",@"three",@"foue",@"five"]},
+                   @{@"title":@"第十组",@"list":@[@"10",@"one",@"two",@"three",@"foue",@"five"]},
+                   @{@"title":@"第十一",@"list":@[@"11",@"one",@"two",@"three",@"foue",@"five"]},
 
                    ];
 }
 
--(UITableView *)leftTableview{
+-(UITableView *)leftTableview
+{
     if (nil == _leftTableview) {
         _leftTableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0,100, self.view.frame.size.height)];
-    
         _leftTableview.backgroundColor = [UIColor whiteColor];
         _leftTableview.delegate = self;
         _leftTableview.dataSource = self;
         [self.view addSubview:_leftTableview];
-        
     }
     return _leftTableview;
 }
